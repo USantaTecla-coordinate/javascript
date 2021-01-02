@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coordenada. Cuadrantes otra con algebra de boole</title>
+  </head>
+  <body>
+    <script>
+      {
+        let row = 3;
+        let column = 4;
+        let quadrant;
+        if (row != 0 && column != 0) {
+          quadrant = 1;
+          if (column < 0) {
+            quadrant += 2;
+          }
+          if ((row > 0 && column < 0) || (row < 0 && column > 0)) {
+            quadrant++;
+          }
+        }
+        let msg = "La coordenada (" + row + ", " + column + ")";
+        if (quadrant == undefined) {
+          msg += " NO está en ningún";
+        } else {
+          msg += " está en el " + quadrant + "º";
+        }
+        msg += " cuadrante.";
+        console.log(msg);
+      }
+    </script>
+  </body>
+</html>

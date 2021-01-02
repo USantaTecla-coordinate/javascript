@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coordenada. Cuadrantes. Version2</title>
+</head>
+<body>
+    <script>
+        {
+            function getQuadrant2(x, y) {
+                let quadrant;
+                if (x != 0 && y != 0) {
+                    quadrant = 0;
+                    if (x > 0) {
+                        quadrant++;
+                    }
+                    if (y < 0) {
+                        quadrant += 3;
+                    } else if (x < 0) {
+                        quadrant += 2;
+                    }
+                }
+                return quadrant;
+            }
+            let x = 10;
+            let y = -6;
+            let quadrant = getQuadrant(x, y);
+            let msg = "La coordenada (" + x + ", " + y + ")";
+            if (quadrant == undefined) {
+                msg = msg + " NO está en ningún";
+            } else {
+                msg = msg + " está en el " + quadrant + "º";
+            }
+            msg = msg + " cuadrante.";
+            console.log(msg);
+        }
+    </script>
+</body>
+</html>
